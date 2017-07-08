@@ -1,0 +1,12 @@
+.display_block{
+	background-color: black;
+	background: rgba(0, 0, 0, 0.5); /*black, transparent overlay of 50%*/
+	width: 85%;
+	height: 650px;
+	text-align: center;
+	margin-left: auto ; /*align center div block */
+  	margin-right: auto ;
+}
+
+.about_me{
+}

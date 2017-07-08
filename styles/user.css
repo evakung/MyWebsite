@@ -1,0 +1,15 @@
+table {
+	border-collapse: collapse; /*merge borders */
+	background-color: white;
+
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 10px; /*celll padding for space between lines */
+    margin: 0 auto;
+
+}
+
+
+

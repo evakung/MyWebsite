@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+
+<head>
+  <link rel="stylesheet" type="text/css" href="styles/menubar.css">
+  <link rel="stylesheet" type="text/css" href="styles/home.css">
+  <link rel="stylesheet" type="text/css" href="styles/background.css">
+  <link rel="stylesheet" type="text/css" href="styles/display_block.css">
+  <meta charset="UTF-8">
+
+  <title> HOME - Eva Kung </title>
+</head>
+
+<body>
+
+
+<div class="menu_bar_top" id="menu_bar_top">
+  <a href="#Home.html">EVA KUNG - Home</a>
+  <a href="resume.html">Resume</a>
+  <a href="#contact">Contact</a>
+  <a href="about.html">About</a>
+  <a href="login.html">Client (Log In)</a>
+</div>
+<div class="myname" id="myname">
+Eva Kung 
+</div>
+<div class="display_block" id="display_block">
+
+
+<blockquote>sadfj;sdkjf;alkj</blockquote>
+
+</div>
+<span style="float:right">
+Currently the time is: <time id="date"></time></span>
+<script>
+  /* 
+  Create a JavaScript Date object for the current date and time,
+  then extract the desired parts, then join them again in the desired format.
+  */
+  var currentDate = new Date(),
+      day = currentDate.getDate(),
+      month = currentDate.getMonth() + 1,
+      year = currentDate.getFullYear(),
+      date = day + "/" + month + "/" + year;
+      
+  // Output the date to the above HTML element
+  document.getElementById("date").innerHTML = date;
+</script>
+
+
+</body>
+</html>
+
