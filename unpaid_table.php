@@ -30,7 +30,7 @@
 
 /* ESTABLISH CONNECTION
 */
-    $con=mysqli_connect("localhost","root","","reports_database");
+    $con=mysqli_connect("localhost","root","","evakun5_addresses");
     // Check connection_aborted(oid)
     if (mysqli_connect_errno())
       {
@@ -44,7 +44,7 @@
 
 /*SELECT * FROM `addresses` WHERE `Date` < '2017-07-01' ORDER BY `StreetName` ASC
 */
-    $result = mysqli_query($con,"SELECT * FROM `addresses` WHERE `Paid` IS NULL ORDER BY `StreetName` ASC");
+    $result = mysqli_query($con,"SELECT * FROM `evakun5_addresses` WHERE `Paid` IS NULL ORDER BY `StreetName` ASC");
 
      echo "<table>";
      echo "<tr>";

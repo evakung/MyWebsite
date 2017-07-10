@@ -44,7 +44,7 @@
 
 /*SELECT * FROM `addresses` WHERE `Date` < '2017-07-01' ORDER BY `StreetName` ASC
 */
-    $sum= mysqli_query($con,"SELECT SUM(Total) FROM addresses WHERE Paid IS NULL"); 
+    $sum= mysqli_query($con,"SELECT SUM(Total) FROM evakun5_addresses WHERE Paid IS NULL"); 
 
  while($row = mysqli_fetch_array($sum)) {
     echo '<b style="color:white">$'; 

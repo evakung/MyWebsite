@@ -47,9 +47,9 @@ ShowList($conn);
 
 <?php
 
-/*SELECT * FROM `addresses` WHERE `Date` < '2017-07-01' ORDER BY `StreetName` ASC
+/*SELECT * FROM `evakun5_addresses` WHERE `Date` < '2017-07-01' ORDER BY `StreetName` ASC
 */
-    $con=mysqli_connect("localhost","root","","reports_database");
+    $con=mysqli_connect("localhost","root","","evakun5_addresses");
     // Check connection_aborted(oid)
     if (mysqli_connect_errno())
       {
@@ -104,7 +104,7 @@ function formaction( str )
 
 <?php
 
-    $result = mysqli_query($con,"SELECT * FROM addresses");
+    $result = mysqli_query($con,"SELECT * FROM evakun5_addresses");
 
      echo "<table>";
      echo "<tr>";
@@ -157,7 +157,7 @@ function formaction( str )
     }
   
 
-  $sum= mysqli_query($con,"SELECT SUM(Total) FROM addresses WHERE Paid IS NULL"); 
+  $sum= mysqli_query($con,"SELECT SUM(Total) FROM evakun5_addresses WHERE Paid IS NULL"); 
 
   while($row = mysqli_fetch_array($sum)) {
     echo '<b style="color:white">$'; 
