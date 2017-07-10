@@ -6,7 +6,7 @@
 	text-align: center;
 	margin-left: auto ; /*align center div block */
   	margin-right: auto ;
+  	position: absolute;
 }
 
-.about_me{
-}
+.about_me

@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="styles/user.css">
 
   <meta charset="UTF-8">
-  <title> USER.PHP</title>
+  <title> SORT DATE</title>
 </head>
 
 <body>
@@ -26,28 +26,9 @@
 </div>
 
 
-
-<?php
-/*include 'db_connect.php';
- 
-$conn = OpenCon();
- 
-echo "Connected Successfully";
-$query = "SELECT * FROM users";
-
-ShowList($conn);
-
-//CloseCon($conn);
- */
-
-
-?>
-
-<div class="display_block" id="display_block">
-
 <?php
 
-/*SELECT * FROM `addresses` WHERE `Date` < '2017-07-01' ORDER BY `StreetName` ASC
+/* ESTABLISH CONNECTION
 */
     $con=mysqli_connect("localhost","root","","reports_database");
     // Check connection_aborted(oid)
@@ -59,52 +40,11 @@ ShowList($conn);
 ?>
 
 
-<form id="unpaid_table" name="myform" action="unpaid_table.php">
-<a href="javascript: submitform()">UNPAID</a>
-</form>
-
-<script type="text/javascript">
-function submitform()
-{
-  document.myform.submit();
-}
-</script>
-
-
-  <script language="javascript">
-function formaction( str )
-{
-  switch( str )
-  { 
-    case "unpaid":
-    document.form_items.action = 'unpaid_table.php';
-    document.form_items.submit();
-    break;
-    
-    case "june":
-    document.form_items.action = 'date_table_june.php';
-    document.form_items.submit();
-    break;
-    
-    case "july":
-    document.form_items.action = 'date_table_july.php';
-    document.form_items.submit();
-    break;
-  }
-}
-</script>
-
-
-<form id="form_items" name="form_items" action="" method="post" enctype="multipart/form-data">
-<input type="button" value="UNPAID" onClick="formaction('unpaid')"/>
-<input type="button" value="JUNE" onClick="formaction('june')"/>
-<input type="button" value="JULY" onClick="formaction('july')"/>
-</form>
-
-
 <?php
 
-    $result = mysqli_query($con,"SELECT * FROM addresses");
+/*SELECT * FROM `addresses` WHERE `Date` < '2017-07-01' ORDER BY `StreetName` ASC
+*/
+    $result = mysqli_query($con,"SELECT * FROM `addresses` WHERE `Paid` IS NULL ORDER BY `StreetName` ASC");
 
      echo "<table>";
      echo "<tr>";
@@ -148,30 +88,11 @@ function formaction( str )
          echo "<td>$paid";
          echo "</tr>";
 
-      /*
-      echo $row['AID'] . " " . $row['Date']. " " . $row['StreetNum']. " " . $row['StreetName']. " " . $row['StreetType']; //these are the fields that you have stored in your database table employee
-      echo "<table>";
-       echo "<tr><td>". $row['AID']."</td><td>". $row['Date'] ."</td><td>".$row['StreetNum'] ."</td></tr>";
-
-        echo "<br />";*/
     }
-  
 
-  $sum= mysqli_query($con,"SELECT SUM(Total) FROM addresses WHERE Paid IS NULL"); 
-
-  while($row = mysqli_fetch_array($sum)) {
-    echo '<b style="color:white">$'; 
-    echo $row['SUM(Total)'];
-  }
-  echo "CAD IS WHAT YOU CURRENTLY OWE <b>";
-   
-  echo "</table>";
-
-mysqli_close($con);
-
+    mysqli_close($con);
+    echo "</table>";
 ?>
-
- <a href="user.php">BACK</a>
 
 
 </div>
