@@ -26,9 +26,6 @@
 <div class="display_block" id="display_block">
 
 <?php
-echo "hi";
-?>
-<?php
 if  (isset($_POST["Username"]) and isset($_POST["password"]) ) {
 
     if ( ($_POST["Username"] == "1") and ($_POST["password"] == "1") ) {        
