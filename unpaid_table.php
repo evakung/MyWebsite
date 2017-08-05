@@ -46,47 +46,46 @@
 */
     $result = mysqli_query($con,"SELECT * FROM `evakun5_addresses` WHERE `Paid` IS NULL ORDER BY `StreetName` ASC");
 
-     echo "<table>";
-     echo "<tr>";
-     echo "<th> ID";
-     echo "<th> Date";
-     echo "<th> Address";
-     echo "<th> Basic";
-     echo "<th> Listing" ;
-     echo "<th> Comps";
-     echo "<th> Total";
-     echo "<th> PAID ?";
-    while($row = mysqli_fetch_array($result)){
-        
+      echo "<table>";
+      echo "<tr>";
+      echo "<th> ID";
+      echo "<th> Date";
+      echo "<th> Address";
+      echo "<th> Basic";
+      echo "<th> Listing" ;
+      echo "<th> Comps";
+      echo "<th> Extra";
+      echo "<th> Paid";
+      while($row = mysqli_fetch_array($result)){
 
-         $aid=$row['AID']; 
-         $date=$row['Date']; 
-         $street_num=$row['StreetNum'];
-         $street_name=$row['StreetName'];
-         $street_type=$row['StreetType']; 
-         $dir=$row['Direction'];
-         $unit=$row['UnitNum']; 
-         $city= $row['City']; 
-         $province= $row['Province'];
-         $postal_code= $row['PostalCode']; 
-         $basic= $row['Basic']; 
-         $listing= $row['Listing'];
-         $comps=$row['Comps']; 
-         $total=$row['Total'];
-         $paid= $row['Paid'];    
+            $aid=$row['AID']; 
+            $date=$row['Date']; 
+            $street_num=$row['StreetNum'];
+            $street_name=$row['StreetName'];
+            $street_type=$row['StreetType']; 
+            $dir=$row['Direction'];
+            $unit=$row['UnitNum']; 
+            $city= $row['City']; 
+            $province= $row['Province'];
+            $postal_code= $row['PostalCode']; 
+            $basic= $row['Basic']; 
+            $listing= $row['Listing'];
+            $comps=$row['Comps']; 
+            $extra=$row['Extra'];
+            $paid= $row['Paid'];    
 
-         /*echo "<td>">.$aid."|".$date."|".$street_num."|".$street_type."|".$dir."|".$unit."|".$city."|".$province."|".$postal_code."|".$basic."|".$listing."|".$comps."|".$paid;*/
-         echo "</tr>";
-         echo "<tr>";
-         echo "<td>$aid";
-         echo "<td>$date";
-         echo "<td>".$unit." ".$street_num." ".$street_name." ".$street_type." ".$dir.", ".$city.", ".$province.", ".$postal_code;
-         echo "<td>$basic";
-         echo "<td>$listing";
-         echo "<td>$comps";
-         echo "<td>".'$'."$total";
-         echo "<td>$paid";
-         echo "</tr>";
+      /*echo "<td>">.$aid."|".$date."|".$street_num."|".$street_type."|".$dir."|".$unit."|".$city."|".$province."|".$postal_code."|".$basic."|".$listing."|".$comps."|".$paid;*/
+            echo "</tr>";
+            echo "<tr>";
+            echo "<td>$aid";
+            echo "<td>$date";
+            echo "<td>".$unit." ".$street_num." ".$street_name." ".$street_type." ".$dir.", ".$city.", ".$province.", ".$postal_code;
+            echo "<td>$basic";
+            echo "<td>$listing";
+            echo "<td>$comps";
+            echo "<td>$extra";
+            echo "<td>$paid";
+            echo "</tr>";
 
     }
 

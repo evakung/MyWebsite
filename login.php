@@ -4,43 +4,40 @@
 
 
 <head>
-  <link rel="stylesheet" type="text/css" href="styles/menubar.css">
-  <link rel="stylesheet" type="text/css" href="styles/home.css">
-  <link rel="stylesheet" type="text/css" href="styles/background.css">
-  <link rel="stylesheet" type="text/css" href="styles/display_block.css">
-  <meta charset="UTF-8">
-  <title> Log In  </title>
+      <link rel="stylesheet" type="text/css" href="styles/menubar.css">
+      <link rel="stylesheet" type="text/css" href="styles/home.css">
+      <link rel="stylesheet" type="text/css" href="styles/background.css">
+      <link rel="stylesheet" type="text/css" href="styles/display_block.css">
+      <meta charset="UTF-8">
+
+      <title> Log In  </title>
 </head>
 
 
 <body>
 
-<div class="menu_bar_top" id="menu_bar_top">
-  <a href="#Home.html">EVA KUNG - Home</a>1
-  <a href="resume.html">Resume</a>
-  <a href="#contact">Contact</a>
-  <a href="about.html">About</a>
-  <a href="login.php">Client (Log In)</a>
+<div class="topnav">
+      <a class="active" href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="login.php">User Login</a>
 </div>
 
 <div class="display_block" id="display_block">
 
 <?php
-if  (isset($_POST["Username"]) and isset($_POST["password"]) ) {
+      if  (isset($_POST["Username"]) and isset($_POST["password"]) ) {
 
-    if ( ($_POST["Username"] == "1") and ($_POST["password"] == "1") ) {        
-        header("Location: user.php");
-        exit;   
-    }
-    else {
-      echo "Error, Cannot login, Please check Username and Password <br/>";}
-}
+      if ( ($_POST["Username"] == "1") and ($_POST["password"] == "1") ) {        
+            header("Location: user.php");
+            exit;   
+      }else{
+            echo "Error, Cannot login, Please check Username and Password <br/>";}
+      }
 
-
-
-echo '<form method="post" action="'.$_SERVER['PHP_SELF'].'">'
+      echo '<form method="post" action="'.$_SERVER['PHP_SELF'].'">'
 ?>
-
+<form>
 Username:
 <br/>
 <input type="text" name="Username" value="Admin_Username">

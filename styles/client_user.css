@@ -1,0 +1,14 @@
+.display_block_container{
+    display: flex;
+
+}
+.display_block_fixed{
+    width: 80%;
+    vertical-align: middle;
+}
+.display_block_flex_item{
+    flex-grow: 10; /*in between*/
+    text-align: center;
+    background-color: coral;
+    vertical-align: middle;;
+}

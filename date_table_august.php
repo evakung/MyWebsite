@@ -11,10 +11,9 @@
   <link rel="stylesheet" type="text/css" href="styles/user.css">
 
   <meta charset="UTF-8">
-  <title> SORT DATE</title>
+  <title> AUGUST </title>
 </head>
 
-<body>
 
 
 <div class="menu_bar_top" id="menu_bar_top">
@@ -36,17 +35,17 @@
       {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
       }
-      
+
 ?>
 
 
 <?php
 
-/*SELECT * FROM `addresses` WHERE `Date` < '2017-07-01' ORDER BY `StreetName` ASC
+/*SELECT * FROM `evakun5_addresses` WHERE `Date` < '2017-07-01' ORDER BY `StreetName` ASC
 */
-    $result = mysqli_query($con,"SELECT * FROM `evakun5_addresses` WHERE `Date` > '2017-07-01'");
+    $result = mysqli_query($con,"SELECT * FROM `evakun5_addresses` WHERE `Date` > '2017-08-01'");
 
-      echo "<table>";
+       echo "<table>";
       echo "<tr>";
       echo "<th> ID";
       echo "<th> Date";

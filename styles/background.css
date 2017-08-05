@@ -1,15 +1,10 @@
 body {
 	/*background-image: url('../images/taipei101-2.jpg'); */
-	/* add a black overlay onto photo for more contrast between words*/
-	
 	background: linear-gradient(
-                     rgba(20,20,20, .5), 
-                     rgba(20,20,20, .5)),
+                     rgba(255,255,255, .80), 
+                     rgba(255,255,255, .80)),
 					 url('../images/taipei101-2.jpg');
+
+    background-attachment: fixed;
 }
 
-@font-face{
-
-	font-family: 'Reef Bold'; 
-	src: url('../fonts/Reef.otf'); 
-}

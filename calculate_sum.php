@@ -45,12 +45,14 @@
 /*SELECT * FROM `addresses` WHERE `Date` < '2017-07-01' ORDER BY `StreetName` ASC
 */
     $sum= mysqli_query($con,"SELECT SUM(Total) FROM evakun5_addresses WHERE Paid IS NULL"); 
-
+/*
+ ROUND(SUM(cash), 2)
+ */
  while($row = mysqli_fetch_array($sum)) {
     echo '<b style="color:white">$'; 
-    echo $row['SUM(Total)'];
+    echo $row['ROUND(SUM(Total), 2)'];
   }
-  echo "CAD IS WHAT YOU CURRENTLY OWE <b>";
+  echo " CAD IS WHAT YOU CURRENTLY OWE <b>";
     mysqli_close($con);
 ?>
 

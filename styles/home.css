@@ -1,16 +1,4 @@
-.myname {
-
-	color: white;
-   
+body {
+  margin: 0;
 }
-
-blockquote {
-	color: white;
-}
-
-@font-face { 
-
-	font-family: 'Reef Bold'; 
-	src: url('fonts/Reef.otf'); 
-} 
 
