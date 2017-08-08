@@ -35,7 +35,7 @@
 /*
 
 <?php
-$con=mysqli_connect("localhost","evakun5","Ek101092","evakun5_addresses");
+$con=mysqli_connect("localhost","evakun5","Ek101092","evakun5_database");
 // Check connection_aborted(oid)
 if (mysqli_connect_errno())
 {
@@ -46,7 +46,10 @@ echo "U R CURRENTLY CONNECTED TO THE ADDRESSES TABLE DATABASE";
 
 */
 
-      $con=mysqli_connect("localhost","root","","evakun5_addresses");
+      //$con=mysqli_connect("localhost","root","","evakun5_addresses");
+
+      $con=mysqli_connect("localhost", "evakun5", "Ek101092", "evakun5_database");
+      
       // Check connection_aborted(oid)
       if (mysqli_connect_errno())
       {

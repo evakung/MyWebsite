@@ -44,7 +44,9 @@ echo "U R CURRENTLY CONNECTED TO THE ADDRESSES TABLE DATABASE";
 
 */
 
-      $con=mysqli_connect("localhost","root","","test");
+      //$con=mysqli_connect("localhost","root","","test");
+      //database for evakung.com 
+      $con=mysqli_connect("localhost", "evakun5", "Ek101092", "evakun5_database");
       // Check connection_aborted(oid)
       if (mysqli_connect_errno())
       {
@@ -63,7 +65,7 @@ echo "U R CURRENTLY CONNECTED TO THE ADDRESSES TABLE DATABASE";
       if  (isset($_POST["Username"]) and isset($_POST["password"]) ) {
            $name = $_POST["Username"]; 
            $password = $_POST["password"]; 
-           $result = mysqli_query($con, "SELECT username, password FROM Users WHERE username = '".$name."' && password = '".$password."'");
+           $result = mysqli_query($con, "SELECT username, password FROM evakun5_users WHERE username = '".$name."' && password = '".$password."'");
 
             if ($result && mysqli_num_rows($result) > 0) {
                 // Login 

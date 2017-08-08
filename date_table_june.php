@@ -29,7 +29,9 @@
 
 /* ESTABLISH CONNECTION
 */
-    $con=mysqli_connect("localhost","root","","evakun5_addresses");
+    $con=mysqli_connect("localhost", "evakun5", "Ek101092", "evakun5_database");
+    
+    //$con=mysqli_connect("localhost","root","","evakun5_addresses");
     // Check connection_aborted(oid)
     if (mysqli_connect_errno())
       {
