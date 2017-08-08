@@ -4,25 +4,25 @@
 
 
 <head>
-  <link rel="stylesheet" type="text/css" href="styles/menubar.css">
-  <link rel="stylesheet" type="text/css" href="styles/home.css">
-  <link rel="stylesheet" type="text/css" href="styles/background.css">
-  <link rel="stylesheet" type="text/css" href="styles/display_block.css">
-  <link rel="stylesheet" type="text/css" href="styles/user.css">
+      <link rel="stylesheet" type="text/css" href="styles/menubar.css">
+      <link rel="stylesheet" type="text/css" href="styles/home.css">
+      <link rel="stylesheet" type="text/css" href="styles/background.css">
+      <link rel="stylesheet" type="text/css" href="styles/display_block.css">
+      <link rel="stylesheet" type="text/css" href="styles/user.css">
 
-  <meta charset="UTF-8">
-  <title> SORT DATE</title>
+      <meta charset="UTF-8">
+      <title> SORT DATE</title>
 </head>
 
 <body>
 
 
 <div class="menu_bar_top" id="menu_bar_top">
-  <a href="#Home.html">EVA KUNG - Home</a>
-  <a href="resume.html">Resume</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="login.html">Client (Log In)</a>
+      <a href="#Home.html">EVA KUNG - Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="login.html">Client (Log In)</a>
 </div>
 
 <div class="display_block" id="display_block">
@@ -32,10 +32,9 @@
 */
     $con=mysqli_connect("localhost","root","","evakun5_addresses");
     // Check connection_aborted(oid)
-    if (mysqli_connect_errno())
-      {
-      echo "Failed to connect to MySQL: " . mysqli_connect_error();
-      }
+    if (mysqli_connect_errno()){
+          echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    }
       
 ?>
 

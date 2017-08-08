@@ -11,7 +11,7 @@
       <link rel="stylesheet" type="text/css" href="styles/client_user.css">
 
       <meta charset="UTF-8">
-      <title> USER.PHP</title>
+      <title> TABLE </title>
 
 </head>
 
@@ -26,6 +26,12 @@
 </div>
 
 <?php
+      // session starts with the help of this function 
+      session_start(); 
+      /*  If session is not set then redirect to Login Page */
+      if(!isset($_SESSION["Username"])){
+            header("Location:login.php");
+      }
 /*
 
 <?php
@@ -47,7 +53,11 @@ echo "U R CURRENTLY CONNECTED TO THE ADDRESSES TABLE DATABASE";
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
       }
+
+      echo "You Are Now Logged in as, ";      
 ?>
+
+
 <div class="display_block" id="display_block">
 
       <div class="display_block_container">
@@ -109,8 +119,13 @@ echo "U R CURRENTLY CONNECTED TO THE ADDRESSES TABLE DATABASE";
 
       <div class="display_block_flex_item">
 
-      <?php  
-            /*CHECK FOR TOTAL*/
+<?php  
+      $result=""; //check if any is owed right now 
+      $result = mysqli_query($con,"SELECT * FROM evakun5_addresses WHERE Paid is Null");
+
+      if(mysqli_num_rows($result)> 0) {
+
+            /*CHECK FOR TOTAL FOR CURRENT MONTH */
             $sql="SELECT SUM(Basic) + SUM(Listing) + SUM(Comps) AS 'SUM(Total)' FROM evakun5_addresses WHERE Date > '2017-07-01' AND Date <'2017-08-01'";
             $sum= mysqli_query($con,$sql); 
 
@@ -130,14 +145,15 @@ echo "U R CURRENTLY CONNECTED TO THE ADDRESSES TABLE DATABASE";
                   } 
             }
             echo ".00 CAD</b>"; 
-      ?>
+      }
+?>
 
       </div>
 </div>
 
 <body>
 
-      <?php
+<?php
 
       $result = mysqli_query($con,"SELECT * FROM evakun5_addresses");
 
