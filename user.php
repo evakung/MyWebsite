@@ -120,13 +120,13 @@ echo "U R CURRENTLY CONNECTED TO THE ADDRESSES TABLE DATABASE";
       <div class="display_block_flex_item">
 
 <?php  
-      $result=""; //check if any is owed right now 
-      $result = mysqli_query($con,"SELECT * FROM evakun5_addresses WHERE Paid is Null");
+      $current_owe=""; //check if any is owed right now 
+      $current_owe = mysqli_query($con,"SELECT * FROM evakun5_addresses WHERE Paid is Null");
 
-      if(mysqli_num_rows($result)> 0) {
+      if(mysqli_num_rows($current_owe)> 0) {
 
             /*CHECK FOR TOTAL FOR CURRENT MONTH */
-            $sql="SELECT SUM(Basic) + SUM(Listing) + SUM(Comps) AS 'SUM(Total)' FROM evakun5_addresses WHERE Date > '2017-07-01' AND Date <'2017-08-01'";
+            $sql="SELECT SUM(Basic) + SUM(Listing) + SUM(Comps) AS 'SUM(Total)' FROM evakun5_addresses WHERE Date > '2017-08-01' AND Date <'2017-09-01'";
             $sum= mysqli_query($con,$sql); 
 
             while($row = mysqli_fetch_array($sum)) {
@@ -135,7 +135,7 @@ echo "U R CURRENTLY CONNECTED TO THE ADDRESSES TABLE DATABASE";
             }
 
             /*CHECK IF EXTRA SECTIONS DONE EXISTS*/
-            $sql2="SELECT SUM(Extra) AS 'SUM(Extra)' FROM evakun5_addresses WHERE Date > '2017-07-01' AND Date <'2017-08-01'";
+            $sql2="SELECT SUM(Extra) AS 'SUM(Extra)' FROM evakun5_addresses WHERE Date > '2017-08-01' AND Date <'2017-09-01'";
             $sum= mysqli_query($con,$sql2); 
 
             while($row = mysqli_fetch_array($sum)) {
